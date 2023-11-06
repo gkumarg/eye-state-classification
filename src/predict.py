@@ -22,7 +22,7 @@ def load(filename: str):
        
 model = load('xgb_model.bin')
 
-app = Flask('sleep-state-predictor')
+app = Flask('eye-state')
 
 @app.route('/predict', methods=['POST'])
 def predict():
