@@ -6,6 +6,9 @@ Project for MLZoomcamp 2023
 
 Electroencephalography, commonly known as EEG, is a technique used to capture the brain's electrical activity. It involves the use of wearable headgear fitted with nonintrusive electrodes that rest on the scalp. This project aims to classify the signals into eye-closed vs eye-open state.
 
+![EEG Sensor Placement Diagram](assets/EEG_10-10_system_with_additional_information.svg)
+By Laurens R. Krol - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=96859272
+
 ## Dataset
 
 This is a multivariate, sequential, time series dataset that can be used for supervised binary classification task.
