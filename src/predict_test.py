@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:9595/predict'
+url = 'http://localhost:9696/predict'
 eeg = {'AF3': 4311.79,
         'F7': 4029.74,
         'F3': 4289.23,
