@@ -8,17 +8,22 @@ import os
 
 
 # to load locally
-# def load(filename: str):
-#     # Get the directory of the current script
-#     script_dir = os.path.dirname(os.path.abspath(__file__))
-#     # Get the parent directory
-#     parent_dir = os.path.dirname(script_dir)
-#     with open(os.path.join(parent_dir, 'models', filename), 'rb') as f:
-#         return pickle.load(f)
-    
 def load(filename: str):
-    with open(filename, 'rb') as f:
-        return pickle.load(f)
+
+    try:
+        with open(filename, 'rb') as f:
+            return pickle.load(f)
+    except:
+        # Get the directory of the current script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Get the parent directory
+        parent_dir = os.path.dirname(script_dir)
+        with open(os.path.join(parent_dir, 'models', filename), 'rb') as f:
+            return pickle.load(f)
+    
+# def load(filename: str):
+#     with open(filename, 'rb') as f:
+#         return pickle.load(f)
        
 model = load('xgb_model.bin')
 
@@ -40,7 +45,7 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=9595)
+    app.run(debug=True, host='0.0.0.0', port=9696)
 
 # eeg = {'AF3': 4311.79,
 #  'F7': 4029.74,

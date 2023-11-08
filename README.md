@@ -53,20 +53,44 @@ Sample feature FC6 after cleaning is shown below:
 
 Step 3: Baseline comparison of models
 
+Multiple models are compared to see which one to select. XGBoost seems to do better and it was selected for further training as seen in train.py.
+
 Step 4: Model Selection
+
+XGBoost model was selected and further hyperparameter optimization was done to get the best parameters that gave the best f1 score.
 
 Step 5: Final Model Training
 
-A final XGBoost model was trained. Getting a very accurate model was not the objective for this project.
+A final XGBoost model was trained. Getting a very accurate model was not the main objective for this project.
 
 Step 6: Model Saving
 
-Step 7: Flask webapp for the model deployment
+Model is saved in models folder after final training with the best estimator from hyperparameter tuning.
+
+Step 7: Flask web-service for the model deployment
+
+Predict.py is a flask app that opens port and can be tested.
+
+When called, it calls predict that loads the json and runs model inference and provides an output as a json
+
+Predict_test.py can be called to run the features through this call. The port numbers should be the same.
+
 
 Step 8: Containerizing the app with Docker
+
+See Dockerfile for how it was setup.
+
+Main docker commands used:
+
+docker build -t sleep-detect:latest .
+
+docker run -it --rm -p 9696:9696  sleep-detect:latest
 
 ![Docker Run](assets/docker_run.jpg)
 
 Results from running the app:
 
 ![Webapp-Results](assets/webapp_results.jpg)
+
+
+

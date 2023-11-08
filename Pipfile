@@ -15,6 +15,7 @@ lightgbm = "*"
 flask = "*"
 gunicorn = "*"
 waitress = "*"
+requests = "*"
 
 [dev-packages]
 ipykernel = "*"
