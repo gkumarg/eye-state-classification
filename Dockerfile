@@ -9,6 +9,6 @@ RUN pipenv install --system --deploy
 
 COPY ["src/predict.py", "models/xgb_model.bin", "./"]
 
-EXPOSE 9595
+EXPOSE 9696
 
 ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
